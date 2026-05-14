@@ -1,0 +1,48 @@
+.nav {
+    position: fixed; /* Fiksira ga za vrh ekrana */
+    top: 0;
+    left: 0;
+    width: 100%; /* Mora pokrivati celu širinu */
+    box-sizing: border-box; /* Da padding ne bi širio navbar van ekrana */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px ;
+    color: black;
+    background-color: white;
+
+    z-index: 1000; /* Da bude iznad slika i karusela */
+    transition: 0.3s;
+}
+
+.rightSection{
+    display: flex;
+    align-items: center;
+    gap: 200px;
+    font-size: 0.9rem;
+}
+.navLinks{
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+
+.login{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.logo{
+    font-size: 30px;
+}
+
+.link{
+    cursor: pointer;
+    transition: 0.3s;
+}
