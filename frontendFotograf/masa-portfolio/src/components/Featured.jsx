@@ -45,16 +45,7 @@ const Featured = () =>{
     return(
         <section className="section-featured">
             <div className="section-header">
-                <span className= "line"></span>
-                <a
-                    href="https://www.instagram.com/_____________masa"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="instagram-link"
-                >
-                    <h2 className="section-title">@_____________masa</h2>
-                </a>
-                <span className= "line"></span>
+                <h2 className="section-title">ISTRAZI JOS FOTOGRAFIJA</h2>
             </div>
             <div className="carousel-container">
                 {/* Dugmići za navigaciju */}

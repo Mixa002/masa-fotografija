@@ -1,13 +1,16 @@
 /* Reset osnovnih parametara */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');* {
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Playfair Display", serif;
+    font-family: "Playfair Display",Inter, serif;
 }
 
 body {
-    font-family: "Playfair Display", serif;
+    font-family: "Playfair Display", Inter, serif;
     background-color: #ffffff;
     color: #1a1a1a;
     line-height: 1.5;

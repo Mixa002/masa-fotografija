@@ -41,3 +41,8 @@ export const MOCK_ALBUMS = [
         date: "2026-05-01",
         images: [ada1,ada2,ada3,natasa,hero,zemun]    }
 ];
+
+export const MOCK_USERS = [
+    { email: 'masa@gmail.com', password: 'masa123', role: 'ADMIN' },
+    { email: 'klijent@gmail.com', password: 'user123', role: 'USER', allowedAlbums: [1, 3] }
+]

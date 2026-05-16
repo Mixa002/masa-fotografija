@@ -1,6 +1,7 @@
 import react from 'react'
 import '../styles/HeroPhotoSection.css'
 import heroImage from "../assets/hero.jpeg"
+import {Link} from "react-router-dom"
 // import { useNavigate } from 'react-router-dom'; // Za navigaciju
 
 const HeroPhotoSection = () => {
@@ -12,9 +13,11 @@ const HeroPhotoSection = () => {
             <div className= "overlay">
                 <div className= "content">
                     <p className= "text">Upoznaj sa mnom grad koji svi volimo</p>
-                    <button className= "cta-button" >
-                        Pogledaj albume
-                    </button>
+                    <Link to="/recent-works" style={{ textDecoration: 'none' }}>
+                        <button className="cta-button">
+                            Pogledaj albume
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>

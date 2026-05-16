@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 .nav {
     position: fixed; /* Fiksira ga za vrh ekrana */
     top: 0;
@@ -11,12 +12,13 @@
     padding: 20px 40px ;
     color: black;
     background-color: white;
-
+    /*font-family: 'Inter', sans-serif;*/
     z-index: 1000; /* Da bude iznad slika i karusela */
     transition: 0.3s;
 }
 
 .rightSection{
+    font-family: "Inter", sans-serif !important;
     display: flex;
     align-items: center;
     gap: 200px;
@@ -24,20 +26,30 @@
 }
 .navLinks{
     display: flex;
+    font-family: "Inter", sans-serif !important;
     list-style: none;
     gap: 50px;
+    font-size: 16px;
     padding: 0;
     margin: 0;
 }
 
+.navLinks a{
+    font-family: "Inter", sans-serif !important;
 
+}
 .login{
     list-style: none;
     padding: 0;
     margin: 0;
+    font-size: 16px;
+
 }
 
+.login a{
+    font-family: "Inter", sans-serif !important;
 
+}
 .logo{
     font-size: 30px;
 }
@@ -45,4 +57,42 @@
 .link{
     cursor: pointer;
     transition: 0.3s;
+    font-family: Inter;
 }
+
+
+.nav-logout-btn-text {
+    background: none;
+    border: none;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit; /* Preuzima font tvog navbara */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.nav-logout-btn-text:hover {
+    opacity: 0.5;
+}
+
+/*.nav-logout-btn-outline {*/
+/*    background: transparent;*/
+/*    border: 1px solid #e0e0e0;*/
+/*    color: #555;*/
+/*    text-transform: uppercase;*/
+/*    letter-spacing: 0.15em;*/
+/*    font-size: 0.7rem;*/
+/*    padding: 8px 16px;*/
+/*    cursor: pointer;*/
+/*    font-family: inherit;*/
+/*    transition: all 0.3s ease;*/
+/*}*/
+
+/*.nav-logout-btn-outline:hover {*/
+/*    border-color: #000000;*/
+/*    color: #000000;*/
+/*}*/

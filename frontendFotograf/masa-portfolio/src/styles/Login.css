@@ -1,0 +1,80 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    text-align: center;
+}
+
+.login-card h2 {
+    font-size: 1.6rem;
+    font-weight: 200;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #e0e0e0; /* Samo donja linija za čistiji izgled */
+    font-size: 0.9rem;
+    color: #333;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-bottom: 1px solid #000000; /* Linija potamni kada se klikne */
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.error-message {
+    color: #ff3333;
+    font-size: 0.75rem;
+    margin-top: 15px;
+    letter-spacing: 0.05em;
+}

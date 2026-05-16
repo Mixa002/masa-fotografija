@@ -3,6 +3,7 @@ import '../styles/Navbar.css'
 import {Link} from 'react-router-dom'
 
 const Navbar = () => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     return(
         <nav className= "nav" >
             <div className= "logo">
@@ -16,15 +17,26 @@ const Navbar = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li className="link">
-                        <Link to="/recent-works">Recent works</Link>
+                        <Link to="/recent-works">Recent work</Link>
                     </li>
                     <li className="link">
-                        <Link to="/your-albums">Your albums</Link>
+                        <Link to="/your-albums">Your album</Link>
                     </li>
                 </ul>
                 <ul className="login">
                     <li className="link">
-                        <Link to="/login">Log in</Link>
+                        {isLoggedIn ? (
+                            // Ako je ulogovan, prikaži Your Albums i Logout dugme
+                            <>
+                                <button onClick={() => {
+                                    localStorage.clear(); // Briše sesiju
+                                    window.location.reload(); // Osvežava da Navbar skapira promenu
+                                }} className="nav-logout-btn-text">Logout</button>
+                            </>
+                        ) : (
+                            // Ako nije ulogovan, samo tada se vidi Login link
+                            <Link to="/login">Log In</Link>
+                        )}
                     </li>
                 </ul>
             </div>
