@@ -1,5 +1,4 @@
 .section-featured{
-    padding: 0;
     margin-top: -40px;
     background-color: #fff;
     overflow: hidden;
@@ -113,18 +112,18 @@
     right: 20px;
 }
 
-.instagram-link {
-    text-decoration: none; /* Uklanja donju crtu */
-    color: inherit; /* Uzima boju od naslova (crnu) */
-    transition: opacity 0.3s ease;
-}
+/*.instagram-link {*/
+/*    text-decoration: none; !* Uklanja donju crtu *!*/
+/*    color: inherit; !* Uzima boju od naslova (crnu) *!*/
+/*    transition: opacity 0.3s ease;*/
+/*}*/
 
-.instagram-link:hover {
-    opacity: 0.6; /* Blagi efekat kada se pređe mišem */
-}
+/*.instagram-link:hover {*/
+/*    opacity: 0.6; !* Blagi efekat kada se pređe mišem *!*/
+/*}*/
 
-/* Osiguraj da h2 ne menja boju unutar linka */
-.instagram-link .section-title {
-    margin: 0;
-    cursor: pointer;
-}
+/*!* Osiguraj da h2 ne menja boju unutar linka *!*/
+/*.instagram-link .section-title {*/
+/*    margin: 0;*/
+/*    cursor: pointer;*/
+/*}*/

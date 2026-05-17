@@ -5,6 +5,7 @@ import slika3 from "../assets/ada2.jpeg";
 import slika4 from "../assets/ada3.jpeg";
 import slika5 from "../assets/natasa.jpeg"
 import  "../styles/Featured.css"
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Featured = () =>{
     const scrollRef = useRef(null); // Kreiramo referencu
@@ -49,8 +50,13 @@ const Featured = () =>{
             </div>
             <div className="carousel-container">
                 {/* Dugmići za navigaciju */}
-                <button className="nav-btn left-btn" onClick={() => scroll('left')}>‹</button>
-                <button className="nav-btn right-btn" onClick={() => scroll('right')}>›</button>
+                <button className="nav-btn left-btn" onClick={() => scroll('left')}>
+                    <ChevronLeft size={20} strokeWidth={1.5} />
+                </button>
+                <button className="nav-btn right-btn" onClick={() => scroll('right')}>
+                    <ChevronRight size={20} strokeWidth={1.5} />
+
+                </button>
 
                 {/* Dodali smo ref={scrollRef} ovde */}
                 <div className="carousel-wrapper" ref={scrollRef}>
