@@ -23,7 +23,7 @@
     align-items: center;
     gap: 200px;
     font-size: 0.9rem;
-    transform: translateY(12px);
+    transform: translateY(10px);
 }
 .navLinks{
     display: flex;
