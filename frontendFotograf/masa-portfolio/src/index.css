@@ -7,9 +7,18 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Playfair Display",Inter, serif;
-    scrollbar-gutter: stable;
+    /*scrollbar-gutter: stable;*/
+    /*overflow-y: auto; !* Scrollbar se pojavljuje samo kad treba *!*/
+}
+html::-webkit-scrollbar {
+    display: none;
 }
 
+/* Za Firefox i Edge */
+html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE i Edge */
+}
 body {
     font-family: "Playfair Display", Inter, serif;
     background-color: #ffffff;
