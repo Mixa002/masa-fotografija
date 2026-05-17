@@ -13,7 +13,7 @@ const RecentWorks = () => {
             <Navbar/>
             <div className="recent-works-container">
                 <header className="section-header">
-                    <h1>Recent works</h1>
+                    <h1>Recent work</h1>
                 </header>
                 <div className="album-grid">
                     {publicAlbums.map((album) => (
