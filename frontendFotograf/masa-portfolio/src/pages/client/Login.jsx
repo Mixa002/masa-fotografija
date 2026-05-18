@@ -1,63 +1,75 @@
-import React, {useState,useEffect} from "react";
+import React, {useState,useEffect,useContext} from "react";
 import {useNavigate} from 'react-router-dom';
 import '../../styles/Login.css';
+import {AuthContext} from "../../context/AuthContext.jsx";
+import axios from 'axios';
 import {MOCK_USERS} from "../../data/MockData.js"
 
 const Login = () => {
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-        const userRole = localStorage.getItem('userRole');
+    const {user,login, isAdmin} = useContext(AuthContext);
 
-        if (isLoggedIn) {
-            // Ako je već ulogovan, ne daj mu da vidi formu nego ga preusmeri
-            if (userRole === 'ADMIN') {
+    useEffect(() => {
+        // Ako Context prepozna da je korisnik ulogovan (jer ima validan token)
+        if (user) {
+            if (isAdmin()) {
                 navigate('/admin/dashboard');
             } else {
                 navigate('/');
             }
         }
-    }, [navigate]);
+    }, [user, isAdmin, navigate]);
 
-    const handleLogin = (e) =>{
+    const handleLogin = async (e) => {
         e.preventDefault();
         setError('');
-        const user = MOCK_USERS.find(u => u.email === email && u.password === password);
-        if(user){
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('userRole', user.role);
-            localStorage.setItem('userEmail', user.email);
-            if (user.allowedAlbums) {
-                localStorage.setItem('allowedAlbums', JSON.stringify(user.allowedAlbums));
-            }
-            if (user.role === 'ADMIN') {
-                navigate('/admin/dashboard'); // Ovo ćeš praviti kasnije
+
+        try {
+            // 1. Šaljemo pravi zahtev na tvoj Spring Boot backend
+            const response = await axios.post('http://localhost:8080/api/auth/login', {
+                username, // šalje se "username" umesto "email"
+                password
+            });
+
+            // 2. Iz AuthResponseDTO uzimamo generisani JWT token
+            const token = response.data.token;
+
+            // 3. Pozivamo login funkciju iz Context-a koja će:
+            //    - Sačuvati token u localStorage
+            //    - Dekodirati ga pomoću jwt-decode i izvući uloge (ROLE_ADMIN/ROLE_USER)
+            //    - Postaviti 'user' stanje globalno u aplikaciji
+            login(token);
+
+            // 4. Pošto useEffect iznad prati promenu 'user' stanja,
+            //    on će automatski odraditi preusmeravanje (redirect) na pravu stranicu!
+
+        } catch (err) {
+            // Ako backend baci 401 Unauthorized ili pukne veza
+            if (err.response && err.response.status === 401) {
+                setError('NEISPRAVNO KORISNIČKO IME ILI LOZINKA.');
             } else {
-                navigate('/'); // Klijenta šaljemo na njegove albume
+                setError('Greška pri povezivanju sa serverom.');
             }
-            window.location.reload();
-        }else{
-            setError('NEISPRAVAN EMAIL ILI LOZINKA.');
         }
     }
 
     return (
         <div className="login-container">
             <div className="login-card">
-                <h2>Login</h2>
+                <h2>Log in</h2>
                 <form onSubmit={handleLogin}>
                     <div className="form-group">
-                        <label>Email</label>
+                        <label>Korisničko ime</label>
                         <input
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                             required
-                            placeholder="primer@mail.com"
+                            placeholder="Unesite korisničko ime"
                         />
                     </div>
                     <div className="form-group">

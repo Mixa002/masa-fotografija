@@ -1,0 +1,187 @@
+/* --- Glavni Kontejner --- */
+.admin-dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    background-color: #fff;
+}
+
+/* --- Dashboard Header --- */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.admin-header h1 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-username {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 400;
+}
+
+/* --- Logout Dugme --- */
+.admin-logout-btn {
+    padding: 8px 18px;
+    background-color: transparent;
+    color: #e11d48;
+    border: 1px solid #e11d48;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.admin-logout-btn:hover {
+    background-color: #e11d48;
+    color: #fff;
+}
+
+/* --- Grid Grid Layout (Dve kolone) --- */
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+}
+
+@media (max-width: 968px) {
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Sekcije / Kartice unutar Dashboard-a --- */
+.admin-section {
+    background: #fafafa;
+    border: 1px solid #f0f0f0;
+    padding: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+.admin-section:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.admin-section h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #111;
+    border-left: 2px solid #111;
+    padding-left: 10px;
+}
+
+/* --- Forme i Input polja --- */
+.admin-form-group {
+    margin-bottom: 20px;
+}
+
+.admin-form-group label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.admin-input,
+.admin-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 0.95rem;
+    color: #222;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.admin-input:focus,
+.admin-select:focus {
+    outline: none;
+    border-color: #111;
+}
+
+/* --- Checkbox / Toggle Styling --- */
+.admin-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+    cursor: pointer;
+}
+
+.admin-checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #111;
+    cursor: pointer;
+}
+
+.admin-checkbox-group span {
+    font-size: 0.85rem;
+    color: #444;
+}
+
+/* --- Primarna Dugmad (Kreiraj / Upload) --- */
+.admin-submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.admin-submit-btn:hover {
+    background-color: #333;
+}
+
+/* --- Zona za Drag & Drop fajlova (Upload lekcija) --- */
+.file-drop-zone {
+    border: 2px dashed #ccc;
+    padding: 40px 20px;
+    text-align: center;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.file-drop-zone:hover {
+    border-color: #111;
+    background: #fdfdfd;
+}
+
+.file-drop-zone p {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0;
+}
