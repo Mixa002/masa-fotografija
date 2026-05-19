@@ -12,4 +12,8 @@ import java.util.UUID;
 public interface UserRepository extends JpaRepository<User, UUID> {
     Optional<User> findByUsername(String username);
     Optional<User> findByEmail(String email);
+
+    // Provera da li već postoji korisnik sa tim email-om ili username-om (za registraciju)
+    boolean existsByUsername(String username);
+    boolean existsByEmail(String email);
 }

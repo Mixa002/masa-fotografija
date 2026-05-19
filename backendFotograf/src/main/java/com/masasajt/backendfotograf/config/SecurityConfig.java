@@ -38,8 +38,13 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
+                        // Otvoreno za login i registraciju
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/albums/**").permitAll()
+
+                        // Otvorena SAMO ruta za javni portfolio (Recent Work)
+                        .requestMatchers(HttpMethod.GET, "/api/albums/public").permitAll()
+
+                        // Sve ostale rute (my-albums, /id, kreiranje, dodavanje slika) zahtevaju validan JWT
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
